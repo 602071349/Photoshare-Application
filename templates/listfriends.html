@@ -1,0 +1,10 @@
+<!doctype html>
+
+<title>List friends</title>
+<h2>Your friends are listed!</h2>
+<ul>
+	{% for friend in friends %}
+		<li>{{friend[0]}},{{friend[1]}}<br></li>
+	{% endfor %}
+</ul>
+

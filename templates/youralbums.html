@@ -1,0 +1,10 @@
+<!doctype html>
+
+<title>Your albums!</title>
+<h2>Your albums are listed!</h2>
+<ul>
+	{% for album in albums %}
+		<li>{{album[0]}}<br></li>
+	{% endfor %}
+</ul>
+

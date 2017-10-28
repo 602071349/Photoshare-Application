@@ -1,0 +1,15 @@
+<!doctype html>
+
+<title>List comment!</title>
+<h2>Comments are listed!</h2>
+<ul>
+	{% for comment in comments %}
+		<li>{{comment[0]}},{{comment[1]}},{{comment[3]}}<br>
+		{{comment[2]}}</li>
+	{% endfor %}
+	{% for comment in guest_comments%}
+		<li>{{comment[1]}}<br>
+		{{comment[0]}}</li>
+	{% endfor %}
+</ul>
+

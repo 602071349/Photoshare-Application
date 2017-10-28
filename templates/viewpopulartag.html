@@ -1,0 +1,10 @@
+<!doctype html>
+
+<title>List populat tags</title>
+<h2>List popular tags!</h2>
+<ul>
+	{% for tag in tags %}
+		<li>Tag name:{{tag[0]}},Number of photos:{{tag[1]}}<br></li>
+	{% endfor %}
+</ul>
+

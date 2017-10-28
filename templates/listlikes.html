@@ -1,0 +1,12 @@
+<!doctype html>
+
+<title>Photos liked!</title>
+<h2>Photos liked!</h2>
+<ul>
+	{% for item in lst %}
+		<li><img src='data:image/png;base64, {{item[0][1].decode('utf-8')}}'/><br>
+		number of likes:{{item[1][0]}}
+		users like this photo:{{item[2]}}</li>
+	{% endfor %}
+	
+</ul>

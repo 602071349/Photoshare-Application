@@ -1,0 +1,10 @@
+<!doctype html>
+
+<title>List popular tags!</title>
+<h2>List popular tags!</h2>
+<ul>
+	{% for tag in tags %}
+		<li><a href='/listbytag1/{{tag[0]}}'>{{tag[0]}}</a><br></li>
+	{% endfor %}
+	
+</ul>

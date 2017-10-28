@@ -1,0 +1,74 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!doctype html>
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+
+{% if photos %}
+<h2>Here are the photos</h2>
+    <ul>
+    {% for photo in photos %}
+
+        <li><form method="post" action="/like">
+				<label>Like the photo!</label><br />
+				<label for="id" >Picture_id:(input={{photo[1]}})</label>
+				<input type='text' name="id" required='true' /><br />
+				<input type="submit" value="Upload" />
+			</form><br>
+		
+			<form method="post" action="/comment">
+				<label>Leave a comment!</label><br />
+				<label for="id" >Picture_id:(input={{photo[1]}})</label>
+				<input type='text' name="id" required='true' /><br />
+                <label for="comment">Comment:</label>
+                <input type="text" name="comment" required='true' /><br />
+				<label for="date">Date:</label>
+                <input type="text" name="date" placeholder="format(1994-1-23)" required='true' /><br />
+                <input type="submit" value="Upload" />
+            </form><br>
+		{{photo[2]}}<br>
+        <img src='data:image/png;base64, {{photo[0].decode('utf-8')}}'/></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% if message is none %}
+  <p>You should <a href='/login'>login!</a></p>
+{% else %}
+  <p> Go to <a href='/profile'>profile?</a></p>
+{% endif %}
+
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/logout'>Logout</a></li>
+<li></li>
+<li><a href='/browse'>Browse photos</a></li>
+<li><a href='/upload'>Upload a photo</a> </li> 
+<li><a href='/delete'>Delete a photo</a></li>
+<li><a href='/yourphotos'>Browse your own photos</a></li>
+<li></li>
+<li><a href='/addfriend'>Add a friend</a></li> 
+<li><a href='/listfriends'>List friends</a></li>
+<li></li>
+<li><a href='/createalbum'>Create an album</a></li>
+<li><a href='/remove'>Delete an album</a></li>
+<li><a href='/youralbums'>Browse your own albums</a></li>
+<li><a href='/viewbyalbum'>View your photos by album</a></li>
+<li></li>
+<li><a href='/contribution'>Contribution rank</a></li>
+<li><a href='/listlikes'>Who like the photos</a></li>
+<li></li>
+<li><a href='/createtag'>Create a tag</a></li>
+<li><a href='/addtag'>Add a tag to photo</a></li>
+<li><a href='/viewbytag'>View your photos by tag</a></li>
+<li><a href='/viewpopulartag'>View popular tags</a></li>
+<li><a href='/search'>Search photos by tags</a></li>
+<li></li>
+<li><a href='/viewcomments'>View comments by picture_id</a></li>
+<li><a href='/recommendations'>Recommendations</a></li>
+</ul>
+
