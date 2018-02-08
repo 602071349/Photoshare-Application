@@ -1,7 +1,4 @@
-######################################
-# author ben lawson <balawson@bu.edu> 
-# Edited by: Craig Einstein <einstein@bu.edu>
-######################################
+
 # Some code adapted from 
 # CodeHandBook at http://codehandbook.org/python-web-application-development-using-flask-and-mysql/
 # and MaxCountryMan at https://github.com/maxcountryman/flask-login/
